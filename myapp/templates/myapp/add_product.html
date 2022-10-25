@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+
+
+
+<div class="box-content h-90 w-60 p-4 border-4">
+<h1 class="mb-6" >ADD Product</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-6">
+        <label for="">Product Name</label>
+        <input type="text" name="name" id="name" placeholder="Name">
+    </div>
+    <div class="mb-6">
+        <label for="">Product Price</label>
+        <input type="text" name="price" id="price" placeholder="Price">
+    </div>
+    <div class="mb-6">
+        <label for="">Product Description</label>
+        <input type="text" name="desc" id="desc" placeholder="Description">
+    </div>
+    <div class="mb-6">
+        <label for="">Product Image</label>
+        <input type="file" name="upload" id="name">
+    </div>
+    <div >
+    <input 
+        class="mb-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"" type="
+        submit" accept="image/*" name="Add Product" value="Add Product">
+    </div>
+
+
+</form>
+</div>
+
+  
+
+
+{% endblock %}

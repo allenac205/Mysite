@@ -1,8 +1,9 @@
+from contextlib import redirect_stderr
 from contextvars import Context
 import http
 import imp
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from myapp.models import Product
@@ -39,14 +40,18 @@ def product_details(request, id):
 
 
 def add_product(request):
-    p = Product()
-    p.name = 'LG 32 inch HD TV'
-    p.price = 42500.0
-    p.description = 'This is a LG TV'
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        price = request.POST.get('price')
+        desc = request.POST.get('desc')
+        image = request.FILES['upload']
 
-    p.save()
+        p = Product(name=name, price=price, description=desc, image=image)
+        p.save()
 
-    return HttpResponse(p)
+        return redirect('/myapp/products')
+    
+    return render(request, 'myapp/add_product.html')
 
 
 
