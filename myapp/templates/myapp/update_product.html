@@ -1,0 +1,46 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+
+
+
+<div class="box-content rounded-lg h-180 w-60 p-4 border-4 mt-5 ml-28">
+<h1 class="text-2xl font-bold mb-10 text-green-500">✏️ Update Product</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-6">
+        <label for="">Product Name</label>
+        <input type="text" name="name" id="name" value="{{p.name}}" placeholder="Name">
+    </div>
+    <div class="mb-6">
+        <label for="">Product Price</label>
+        <input type="text" name="price" id="price" value="{{p.price}}" placeholder="Price">
+    </div>
+    <div class="mb-6">
+        <label for="">Product Description</label>
+        <input type="text" name="desc" id="desc" value="{{p.description}}" placeholder="Description">
+    </div>
+    {% if p.image %}
+        <div class="mb-6">
+            <label for="">Product Image</label>
+            <img class="w-36 mb-2 rounded-lg" src="{{p.image.url}}" alt="image not found">
+            <input type="file" name="upload" id="upload">
+        </div>
+    {% else %}
+        <div class="mb-6">
+            <label for="">Product Image</label>
+            <img class="w-36 mb-2 rounded-lg" src="" alt="Currently no image added">
+            <input type="file" name="upload" id="upload">
+        </div>
+    {% endif %}
+    <div >
+    <input class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-12 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800" type="submit" accept="image/*" name="Update Product" value="Update Product">
+    </div>
+</form>
+</div>
+
+
+{% endblock %}
+
+
+
