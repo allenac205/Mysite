@@ -1,6 +1,9 @@
 from django.urls import path, include
 from myapp.views import index, new_one, products, assignment_1, product_details, add_product, update_product, delete_product
 
+
+
+
 urlpatterns = [
     path('', index),
     path('new/', new_one),

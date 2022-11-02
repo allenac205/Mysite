@@ -110,4 +110,4 @@ def delete_product(request,id):
 
 
 def assignment_1(request):
-    return render(request, 'assignment.html')
+    return render(request, 'myapp/assignment.html')
