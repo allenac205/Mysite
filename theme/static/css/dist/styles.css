@@ -2363,6 +2363,14 @@ html {
   width: 33.333333%;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -2425,6 +2433,10 @@ html {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .border-4 {

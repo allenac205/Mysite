@@ -1,6 +1,3 @@
-from distutils.command.upload import upload
-from email.mime import image
-from enum import unique
 from unittest.util import _MAX_LENGTH
 from django.db import models
 

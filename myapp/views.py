@@ -5,6 +5,7 @@ import imp
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from myapp.models import Product
 
@@ -18,7 +19,7 @@ def index(request):
 def new_one(request):
     return HttpResponse('this is new one')
 
-
+@login_required
 def products(request):
     p = Product.objects.all()
     # p1 = [Product.objects.get(id=2)]
