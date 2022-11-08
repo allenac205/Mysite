@@ -1,8 +1,4 @@
-from contextlib import redirect_stderr
-from contextvars import Context
-import http
-import imp
-from multiprocessing import context
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -27,7 +23,7 @@ def products(request):
 
     # return HttpResponse(p[0].price)
     # return HttpResponse(p2)
-    # print(p)
+    # print(p[0].image)
     # print(type(p[0]))
 
     context = {'products':p}
