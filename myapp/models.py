@@ -10,5 +10,5 @@ class Product(models.Model):
     name = models.CharField(max_length=100, unique=True)
     price = models.FloatField()
     description = models.CharField(max_length=200)
-    image= models.ImageField(blank=True, upload_to='images')
-    seller_name = models.ForeignKey(User, on_delete=models.CASCADE, default=9)
+    image = models.ImageField(blank=True, upload_to='images')
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, default=9)

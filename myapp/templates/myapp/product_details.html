@@ -14,8 +14,8 @@
           <div class="card-actions">
             <button class="btn btn-primary">₹{{p.price}}</button>
           </div>
-          <p>Sold by : {{p.seller_name}}</p>
-          <a href="{% url 'users:sellerprofile' p.seller_name.id %}"><div class="text-sm">Seller Details</div></a>
+          <p>Sold by : {{p.seller}}</p>
+          <a href="{% url 'users:sellerprofile' p.seller.id %}"><div class="text-sm">Seller Details</div></a>
         </div>
       </div>
 
