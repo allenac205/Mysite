@@ -20,6 +20,7 @@ def new_one(request):
 
 
 
+
 @login_required
 def products(request):
     p = Product.objects.all()
@@ -44,16 +45,19 @@ class ProductListView(ListView):
 
 
 
+
+
 def product_details(request, id):
     p = Product.objects.get(id = id)
     context = {'p':p}
     return render(request, 'myapp/product_details.html', context = context)
 
 
-class ProductDetailView(DeleteView):
+class ProductDetailView(DetailView):
     model = Product
     template_name = 'myapp/product_details.html'
     context_object_name = 'p'
+
 
 
 
@@ -117,7 +121,10 @@ class ProductUpdateView(UpdateView):
     model = Product
     fields = ['name','price','description','image','seller']
     template_name = 'myapp/update_product.html'
+    context_object_name = 'p'
     success_url = reverse_lazy('myapp:products')
+
+
 
 
 
@@ -134,8 +141,11 @@ def delete_product(request,id):
     
     return render(request, 'myapp/delete_product.html', context = context)
 
-class ProductDelete(DetailView):
+
+class ProductDelete(DeleteView):
     model = Product
+    template_name = 'myapp/delete_product.html'
+    context_object_name = 'p'
     success_url = reverse_lazy('myapp:products')
 
 
