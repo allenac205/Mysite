@@ -1,12 +1,12 @@
 {% extends 'myapp/base.html' %}
-
 {% block content %}
 
 
-  <div class="grid grid-flow-row-dense grid-cols-2 grid-rows-3 gap-10 p-10">
+<div class="flex flex-row justify-center">
+  <div class="grid grid-flow-row-dense grid-cols-2 gap-12 p-10">
 
     {% for p in products %}
-    <div class="card w-96 glass m-10.5">
+    <div class="card w-96 glass m-10 shadow-2xl">
       {% if p.image %}
         <figure><img class="object-cover h-60 w-90" src="{{p.image.url}}" alt="not found!"/></figure>
       {% else %}
@@ -25,7 +25,8 @@
     {% endfor %}
 
   </div>
+</div>
    
 
-  {% endblock %}
+{% endblock %}
 

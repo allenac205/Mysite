@@ -12,3 +12,7 @@ class Product(models.Model):
     description = models.CharField(max_length=200)
     image = models.ImageField(blank=True, upload_to='images')
     seller = models.ForeignKey(User, on_delete=models.CASCADE, default=9)
+
+
+
+

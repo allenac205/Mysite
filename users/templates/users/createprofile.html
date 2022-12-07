@@ -4,25 +4,21 @@
 
 
 
-<div class="box-content rounded-lg h-180 w-60 p-4 border-4 mt-14 ml-28">
-<h1 class="text-2xl font-bold mb-10 text-green-500" >➕ Create Profile</h1>
-<form action="" method="POST" enctype="multipart/form-data">
+<form style="position:relative; left: 470px; margin-top: 2%;" action="" method="POST" enctype="multipart/form-data" class='card-body w-2/6 shadow-2xl m-10 p-10'>
     {% csrf_token %}
+    <h1 class="text-2xl font-bold mb-10 text-green-500" >➕ Create Profile</h1>
     <div class="mb-6">
-        <label for="">Contact Number</label>
-        <input type="text" name="contact_number" id="contact_number" placeholder="contact number">
+        <label class="block text-grey-700 text-sm font-bold mb-2">Contact Number</label>
+        <input class="input input-bordered w-full max-w-xs" type="text" name="contact_number" id="contact_number" placeholder="contact_number">
     </div>
     <div class="mb-6">
-        <label for="">Image</label>
+        <label class="block text-grey-700 text-sm font-bold mb-2">Image</label>
         <input type="file" name="upload" id="upload">
     </div>
     <div >
-    <input class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-12 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800" type="submit" accept="image/*" name="Create Profile" value="Create Profile">
+        <input style="position:relative; left: 125px; margin-top: 3%;" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg  px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 w-2/5" type="submit" accept="image/*" name="Create Profile" value="Create Profile">
     </div>
-
-
-</form> 
-</div>
+</form>
 
   
 
