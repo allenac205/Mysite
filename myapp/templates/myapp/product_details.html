@@ -3,9 +3,9 @@
 
     
 <div class="flex flex-auto justify-center">
-  <div class="card glass w-2/5 bg-base-100 shadow-2xl mt-7 ">
+  <div class="card glass w-2/5 bg-base-100 shadow-2xl mt-7">
        {% if p.image %}
-         <figure class="">
+         <figure class="p-1">
            <img src="{{p.image.url}}" alt="Shoes" class="rounded-xl" />
          </figure>
        {% endif %}
@@ -14,8 +14,7 @@
          <p class="text-lg">{{p.description}}</p>
          <p class="text-2xl font-bold">₹{{p.price}}</p>
          <div class="card-actions">
-           <a href="{% url 'myapp:cart_add' p.id %}"><button class="text-white font-medium rounded-lg text-lg dark:bg-amber-400 dark:hover:bg-amber-500 p-2 w-full">🛒 ADD TO CART</button></a> 
-           {% comment %} <a href=""><button class="text-white font-medium rounded-lg text-lg dark:bg-orange-500 dark:hover:bg-orange-600 p-2 w-full">⚡BUY NOW</button></a> {% endcomment %}
+           <a href="{% url 'myapp:cart_add' p.id %}"><button class="text-white font-medium rounded-lg text-lg dark:bg-amber-400 dark:hover:bg-amber-500 p-2 w-full">🛒 ADD TO CART</button></a>            
          </div>
          <p>Sold by : {{p.seller}}</p>
          <a href="{% url 'users:sellerprofile' p.seller.id %}"><div class="text-xl underline decoration-solid text-sky-900 hover:text-sky-500">Seller Details</div></a>

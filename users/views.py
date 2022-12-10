@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 
 def register(request):
-    print('ooooooooooooooooooooooooooooooooooooooooooooooooooooo')
+    
     form = NewUserForm(request.POST)
 
     if request.method == 'POST':

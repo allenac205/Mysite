@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+
+
+
+<h1 class="m-4 mt-10 text-green-600 text-5xl font-extrabold text-center">Payement Success</h1>
+<h1 class="m-4 mt-10 text-pink-600 text-4xl font-extrabold text-center">Thank You</h1>
+<div class="flex justify-center">
+<a href="{% url 'myapp:products' %}"><button class="text-white font-medium rounded-lg text-lg dark:bg-sky-500 dark:hover:bg-sky-600 p-2 ml-6 mt-4">Continue Shoping</button></a>
+<a href="{% url 'myapp:oder_history' %}"><button class="text-white font-medium rounded-lg text-lg dark:bg-yellow-500 dark:hover:bg-yellow-600 p-2 ml-6 mt-4">View Oder History</button></a>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

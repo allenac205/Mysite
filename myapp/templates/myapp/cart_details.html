@@ -1,0 +1,53 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+
+
+
+<h1  class="m-4 text-purple-600 text-5xl font-extrabold text-center">CART ITEMS</h1>
+<form action="" method="POST">
+{% csrf_token %} 
+
+<div class="mt-12">
+   
+{% for product in products %}
+<div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row w-3/6 m-6 ">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{{product.image.url}}" alt="">
+    <div class="flex flex-col justify-between p-4 leading-normal w-full">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-black">{{product.name}}</h5>
+    </div>
+    <label class="font-semibold">Quantity:</label>
+    <input class="h-8 w-14 p-1" type="number" name="{{product.id}}" min="1" max="15" value="1">
+    <div class="flex flex-col justify-between p-4 leading-normal text-end w-full">
+        <p class="font-bold text-black text-xl">₹{{product.price}}</p>
+        <a href="{% url 'myapp:cart_remove' product.id %}" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 w-2/5 p-2 mx-12 mt-6">remove</a>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+
+
+
+
+
+<div class="flex justify-center">
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-white dark:border-white m-5">
+        <h5 class="mb-5 text-2xl font-bold tracking-tight underline text-center">SUMMARY</h5>
+        <p class="mb-2 font-bold text-lg">Total items : {{user.profile.total_cart_items}}</p>
+        <input type="submit" class="text-white font-medium rounded-lg text-lg dark:bg-green-500 dark:hover:bg-green-600 p-2 ml-6 mt-4 mr-5" value="CHECK OUT">
+    </div>
+</div>
+
+</form>
+
+
+
+<div class="flex justify-center">
+    <a href="{% url 'myapp:products' %}"><button class="text-white font-medium rounded-lg text-lg dark:bg-sky-500 dark:hover:bg-sky-600 p-2 mr-12 mt-4 mb-5 ml-12">Continue Shopping</button></a>
+</div>
+
+
+
+{% endblock %}

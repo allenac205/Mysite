@@ -15,4 +15,26 @@ class Product(models.Model):
 
 
 
+class Cart(models.Model):
+
+    def __str__(self):
+        return self.product_name
+
+    product_id = models.IntegerField()
+    product_name = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    
+    
+
+
+class OderHistory(models.Model):
+
+    def __str__(self):
+        return self.product_name
+
+    product_id = models.IntegerField()
+    product_name = models.CharField(max_length=100)
+    quantity = models.IntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 

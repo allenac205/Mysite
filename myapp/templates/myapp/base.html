@@ -17,11 +17,11 @@
       <a class="btn btn-ghost normal-case text-xl font-extrabold" href="{% url 'myapp:products' %}">MySite Cart</a>
     </div>
     <div class="flex-none">
-
+      
       {% if user.is_authenticated %}
-        <p>Hi {{user}}</p>
+        <p>Hello {{user}}</p>
       {% endif %}
-
+      
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle">
           <div class="indicator">
@@ -36,7 +36,6 @@
         <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
           <div class="card-body">
             <span class="font-bold text-lg">total items : {{user.profile.total_cart_items}}</span>
-            <span class="text-lg font-semibold">Subtotal : ₹ {{user.profile.total_cart_amount}}</span>
             <div class="card-actions">
               <a href="{% url 'myapp:cart_view' %}"><button class="btn btn-primary btn-block">View cart</button></a>
             </div>
@@ -56,10 +55,12 @@
           </div>
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a href="{% url 'users:profile' %}">Profile 👩🏻‍💼</a></li>
-          <li><a href="{% url 'myapp:products' %}">Home 🏠</a></li>
           
+          <li><a href="{% url 'myapp:products' %}">Home 🏠</a></li>
+
           {% if user.is_authenticated %}
+            <li><a href="{% url 'users:profile' %}">Profile 👩🏻‍💼</a></li>
+            <li><a href="{% url 'myapp:oder_history' %}">Order</a></li>
             <li><a href="{% url 'users:logout' %}">Logout❕</a></li>
           {% else %}
             <li><a href="{% url 'users:login' %}">Login</a></li>

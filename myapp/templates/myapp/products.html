@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<div class="flex flex-row justify-center">
+{% comment %} <div class="flex flex-row justify-center"> {% endcomment %}
   <div class="grid grid-flow-row-dense grid-cols-2 gap-12 p-10">
 
     {% for p in products %}
@@ -13,11 +13,11 @@
         <figure><img class="object-cover h-60 w-90" src="" alt="not found!"/></figure>
       {% endif %}
       <div class="card-body">
-        <h2 class="card-title">{{p.name}}</h2>
+        <h2 class="card-title uppercase">{{p.name}}</h2>
         <p>{{p.description}}</p>
         <div class="card-actions justify-end">
           <a href="{% url 'myapp:product_details' p.id %}">
-          <button class="btn btn-primary">₹{{p.price}}</button>
+          <button class="btn btn-primary bg-blue-800">₹{{p.price}}</button>
           </a>
         </div>
       </div>
